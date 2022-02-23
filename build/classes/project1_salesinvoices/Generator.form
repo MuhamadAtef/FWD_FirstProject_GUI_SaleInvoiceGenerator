@@ -110,24 +110,24 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel_InvoiceNumber" min="-2" pref="101" max="-2" attributes="0"/>
                                       <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel_CustomerName" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="jLabel_CustomerName" alignment="0" max="32767" attributes="0"/>
                                               <Component id="jLabel_InvoiceDate" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabelInviceTotal" alignment="0" min="-2" pref="66" max="-2" attributes="0"/>
+                                              <Component id="jLabelInviceTotal" alignment="0" max="32767" attributes="0"/>
                                           </Group>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="jLabel_InvoiceTotalDisplay" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="jTextField_CustomerName" min="-2" pref="201" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
                                               <Group type="102" alignment="0" attributes="0">
                                                   <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                                                   <Group type="103" groupAlignment="0" attributes="0">
                                                       <Component id="jLabel_InvoiceNumberDisplay" min="-2" max="-2" attributes="0"/>
                                                       <Component id="jTextField_InvoiceDate" min="-2" pref="201" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="jLabel_InvoiceTotalDisplay" min="-2" pref="57" max="-2" attributes="0"/>
+                                                      <Component id="jTextField_CustomerName" min="-2" pref="201" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
                                           </Group>
@@ -171,12 +171,12 @@
                               <Component id="jLabel_InvoiceDate" min="-2" max="-2" attributes="0"/>
                               <Component id="jTextField_InvoiceDate" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="jLabel_CustomerName" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField_CustomerName" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel_CustomerName" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jTextField_CustomerName" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel_InvoiceTotalDisplay" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabelInviceTotal" alignment="3" min="-2" max="-2" attributes="0"/>

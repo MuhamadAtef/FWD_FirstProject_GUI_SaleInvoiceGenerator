@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package project1_salesinvoices;
+package project1_salesinvoices.Model;
 
 /**
  *
@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import javax.swing.table.DefaultTableModel;
+import project1_salesinvoices.Controller.InvoiceLine;
 
 public class LineTableModel extends DefaultTableModel {
       private String [] colsNames = {"item Name", "item Price" , "item Count","Items Total"};

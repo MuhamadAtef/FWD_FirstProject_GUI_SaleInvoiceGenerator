@@ -1,6 +1,8 @@
 
-package project1_salesinvoices;
+package project1_salesinvoices.View;
 
+import project1_salesinvoices.Model.HeaderTableModel;
+import project1_salesinvoices.Model.LineTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
@@ -15,6 +17,8 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+import project1_salesinvoices.Controller.InvoiceHeader;
+import project1_salesinvoices.Controller.InvoiceLine;
 
 
 public class Generator extends javax.swing.JFrame implements ActionListener  , ListSelectionListener{
@@ -165,21 +169,21 @@ public class Generator extends javax.swing.JFrame implements ActionListener  , L
                                 .addGroup(jPanel_OfInvoiceTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel_InvoiceNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel_OfInvoiceTableLayout.createSequentialGroup()
-                                        .addGroup(jPanel_OfInvoiceTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jLabel_CustomerName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel_InvoiceDate)
-                                            .addComponent(jLabelInviceTotal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                         .addGroup(jPanel_OfInvoiceTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel_CustomerName)
+                                            .addComponent(jLabel_InvoiceDate)
+                                            .addComponent(jLabelInviceTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(jPanel_OfInvoiceTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel_OfInvoiceTableLayout.createSequentialGroup()
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addGroup(jPanel_OfInvoiceTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jLabel_InvoiceTotalDisplay)
+                                                    .addComponent(jTextField_CustomerName, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                             .addGroup(jPanel_OfInvoiceTableLayout.createSequentialGroup()
                                                 .addGap(9, 9, 9)
                                                 .addGroup(jPanel_OfInvoiceTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                     .addComponent(jLabel_InvoiceNumberDisplay)
-                                                    .addComponent(jTextField_InvoiceDate, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                            .addGroup(jPanel_OfInvoiceTableLayout.createSequentialGroup()
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addGroup(jPanel_OfInvoiceTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jLabel_InvoiceTotalDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(jTextField_CustomerName, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                                    .addComponent(jTextField_InvoiceDate, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                                 .addGap(96, 96, 96))
                             .addGroup(jPanel_OfInvoiceTableLayout.createSequentialGroup()
                                 .addGroup(jPanel_OfInvoiceTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -207,11 +211,11 @@ public class Generator extends javax.swing.JFrame implements ActionListener  , L
                         .addGroup(jPanel_OfInvoiceTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel_InvoiceDate)
                             .addComponent(jTextField_InvoiceDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(21, 21, 21)
-                        .addGroup(jPanel_OfInvoiceTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel_OfInvoiceTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel_CustomerName)
                             .addComponent(jTextField_CustomerName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(24, 24, 24)
+                        .addGap(27, 27, 27)
                         .addGroup(jPanel_OfInvoiceTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel_InvoiceTotalDisplay)
                             .addComponent(jLabelInviceTotal))
@@ -422,7 +426,7 @@ public class Generator extends javax.swing.JFrame implements ActionListener  , L
 	// load file feature
 	   private void loadFile() throws Exception {
 		 
-		   JOptionPane.showMessageDialog(this, "please select InvoiceHeader CSVfile","invoice header",JOptionPane.WARNING_MESSAGE);
+		   JOptionPane.showMessageDialog(this, "please select header file","invoice header",JOptionPane.WARNING_MESSAGE);
 	       JFileChooser fc = new JFileChooser();
 	       int result = fc.showOpenDialog(this);
 	       if (result == JFileChooser.APPROVE_OPTION) {
@@ -445,7 +449,7 @@ public class Generator extends javax.swing.JFrame implements ActionListener  , L
 	    	   System.out.println("check");
 	    
 	    	   
-	    	   JOptionPane.showMessageDialog(this, "please select Invoiceline CSVfile","invoice line",JOptionPane.WARNING_MESSAGE);
+	    	   JOptionPane.showMessageDialog(this, "please select Invoice line file","invoice line",JOptionPane.WARNING_MESSAGE);
 		       result = fc.showOpenDialog(this);
 		       if (result == JFileChooser.APPROVE_OPTION) {
 		    	   selectFile = fc.getSelectedFile();
@@ -503,8 +507,8 @@ public class Generator extends javax.swing.JFrame implements ActionListener  , L
         
     jTextField_CustomerName.setText(row.getInvoiceCustomerName());
     jTextField_InvoiceDate.setText(row.getInvoiceDate().toString());
-    jLabel_InvoiceNumberDisplay.setText(""+row.getInvoiceID());
-    jLabel_InvoiceTotalDisplay.setText(""+row.getInvoiceTotal());
+      jLabel_InvoiceNumberDisplay.setText(""+row.getInvoiceID());
+     jLabel_InvoiceTotalDisplay.setText(""+row.getInvoiceTotal());
     ArrayList<InvoiceLine> lines= row.getLines();
     lineTableModel =new LineTableModel(lines);
     jTable_InvoiceItems.setModel(lineTableModel);
@@ -516,13 +520,12 @@ public class Generator extends javax.swing.JFrame implements ActionListener  , L
     private void saveData() throws Exception{
         
         //for Header Tabel
-        JOptionPane.showMessageDialog(this, "Please,select InvoiceHeader CSVfile", "Invooice Header", JOptionPane.WARNING_MESSAGE);
+        JOptionPane.showMessageDialog(this, "Please Choose File Header to Save", "Invooice Header", JOptionPane.WARNING_MESSAGE);
         JFileChooser fileChoosers = new JFileChooser();
         int option = fileChoosers.showOpenDialog(this);
-        
         if (option == JFileChooser.APPROVE_OPTION) {
-            File CSVfile = fileChoosers.getSelectedFile();
-            PrintWriter out = new PrintWriter(CSVfile);
+            File Csvfile = fileChoosers.getSelectedFile();
+            PrintWriter out = new PrintWriter(Csvfile);
  
            for (InvoiceHeader header : invoices) {
              
@@ -530,16 +533,16 @@ public class Generator extends javax.swing.JFrame implements ActionListener  , L
                out.println();
             }
            out.close();
-            JOptionPane.showMessageDialog(this, "InvoiceHeader is updated Successfully", "Information", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Successfully Header Saved", "Information", JOptionPane.INFORMATION_MESSAGE);
         }
         //for Lines Tabel
-               JOptionPane.showMessageDialog(this, "Please,select Invoiceline CSVfile", "InvoiceLine", JOptionPane.WARNING_MESSAGE);
+               JOptionPane.showMessageDialog(this, "Please Chosce File Line to Save", "Invooice Line", JOptionPane.WARNING_MESSAGE);
           fileChoosers = new JFileChooser();
          option = fileChoosers.showOpenDialog(this);
-         
         if (option == JFileChooser.APPROVE_OPTION) {
             File Csvfilee = fileChoosers.getSelectedFile();
             PrintWriter outt = new PrintWriter(Csvfilee);
+ 
  
            for (InvoiceHeader header : invoices) {
                for(InvoiceLine Lines :header.getLines()){
@@ -547,7 +550,7 @@ public class Generator extends javax.swing.JFrame implements ActionListener  , L
                outt.println();
             }}
            outt.close();
-            JOptionPane.showMessageDialog(this, "Invoiceline are updated Successfully", "Information", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Successfully Lines Saved", "Information", JOptionPane.INFORMATION_MESSAGE);
         }
  
     }
@@ -574,8 +577,6 @@ public class Generator extends javax.swing.JFrame implements ActionListener  , L
         InvoiceHeader newInvoiceHeader = new InvoiceHeader(num,invDate,customerName);
         invoices.add(newInvoiceHeader);
         headerTableModel.fireTableDataChanged(); 
-        JOptionPane.showMessageDialog(this, "New invoice is created Successfully", "Information", JOptionPane.INFORMATION_MESSAGE);
-
         
     }
      private void deleteInv() {
@@ -583,8 +584,6 @@ public class Generator extends javax.swing.JFrame implements ActionListener  , L
          headerTableModel.removeRow(row);
          headerTableModel.fireTableDataChanged();
          lineTableModel.fireTableDataChanged();
-         JOptionPane.showMessageDialog(this, "Current invoice is deleted Successfully", "Information", JOptionPane.INFORMATION_MESSAGE);
-
    
     }
     private void createInvCancel() {
@@ -627,8 +626,6 @@ public class Generator extends javax.swing.JFrame implements ActionListener  , L
          invoiceHeader.addLine(line);
          lineTableModel.fireTableDataChanged();
          headerTableModel.fireTableDataChanged();
-         JOptionPane.showMessageDialog(this, "New item is added Successfully", "Information", JOptionPane.INFORMATION_MESSAGE);
-
     }
     
     
@@ -637,8 +634,6 @@ public class Generator extends javax.swing.JFrame implements ActionListener  , L
          lineTableModel.removeRow(row);
          lineTableModel.fireTableDataChanged();
          headerTableModel.fireTableDataChanged();
-         JOptionPane.showMessageDialog(this, "Current item is deleted Successfully", "Information", JOptionPane.INFORMATION_MESSAGE);
-
     }
     private void createLineCancel() {
         lineDialog.setVisible(false);

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package project1_salesinvoices;
+package project1_salesinvoices.View;
 
 import java.awt.GridLayout;
 import javax.swing.JButton;
@@ -22,8 +22,8 @@ public class InvoiceLineDialog extends JDialog{
     private JLabel itemNameLabel;
     private JLabel itemCountLabel;
      private JLabel itemPriceLabel;
-    private JButton okButton;
-    private JButton cancelButton;
+    private JButton okBtn;
+    private JButton cancelBtn;
     
     public InvoiceLineDialog(Generator g) {
         itemNameLabel = new JLabel("Item Name:");
@@ -36,12 +36,12 @@ public class InvoiceLineDialog extends JDialog{
         itemPriceLabel =new JLabel("Item Price:");
         itemPriceField =new JTextField(20);
         
-        okButton = new JButton("Ok");
-        okButton.addActionListener(g);
-        okButton.setActionCommand("createLineOk");
-        cancelButton = new JButton("Cancel");
-        cancelButton.addActionListener(g);
-        cancelButton.setActionCommand("createLineCancel");
+        okBtn = new JButton("Ok");
+        okBtn.addActionListener(g);
+        okBtn.setActionCommand("createLineOk");
+        cancelBtn = new JButton("Cancel");
+        cancelBtn.addActionListener(g);
+        cancelBtn.setActionCommand("createLineCancel");
         
         setLayout(new GridLayout(4,2));
         add(itemNameLabel);
@@ -50,9 +50,10 @@ public class InvoiceLineDialog extends JDialog{
         add(itemCountField);
         add(itemPriceLabel);
         add(itemPriceField);
-        add(okButton);
-        add(cancelButton);
-        
+        add(okBtn);
+        add(cancelBtn);
+        //setSize(300,120);
+       // setLocation(200,200);
        
        pack();
     }

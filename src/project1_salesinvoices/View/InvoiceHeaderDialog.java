@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package project1_salesinvoices;
+package project1_salesinvoices.View;
 
 import java.awt.GridLayout;
 import javax.swing.JDialog;
@@ -20,28 +20,29 @@ public class InvoiceHeaderDialog extends JDialog{
     private JTextField dateField;
     private JLabel customerNameLabel;
     private JLabel dateLabel;
-    private JButton okButton;
-    private JButton cancelButton;
+    private JButton okBtn;
+    private JButton cancelBtn;
     
     public InvoiceHeaderDialog(Generator g) {
         customerNameLabel = new JLabel("customer Name:");
         customerNameField = new JTextField(20);
         dateLabel =new JLabel("Invoice Date:");
         dateField =new JTextField(20);
-        okButton = new JButton("Ok");
-        okButton.addActionListener(g);
-        okButton.setActionCommand("createInvOk");
-        cancelButton = new JButton("Cancel");
-        cancelButton.addActionListener(g);
-        cancelButton.setActionCommand("createInvCancel");
+        okBtn = new JButton("Ok");
+        okBtn.addActionListener(g);
+        okBtn.setActionCommand("createInvOk");
+        cancelBtn = new JButton("Cancel");
+        cancelBtn.addActionListener(g);
+        cancelBtn.setActionCommand("createInvCancel");
         setLayout(new GridLayout(3,2));
         add(dateLabel);
         add(dateField);
         add(customerNameLabel);
         add(customerNameField);
-        add(okButton);
-        add(cancelButton);
-  
+        add(okBtn);
+        add(cancelBtn);
+        //setSize(300,120);
+       // setLocation(200,200);
        
        pack();
     }

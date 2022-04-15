@@ -12,7 +12,6 @@ package project1_salesinvoices.Model;
 import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.table.DefaultTableModel;
-import project1_salesinvoices.Controller.InvoiceHeader;
 
 
 

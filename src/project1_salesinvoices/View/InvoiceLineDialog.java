@@ -25,7 +25,7 @@ public class InvoiceLineDialog extends JDialog{
     private JButton okBtn;
     private JButton cancelBtn;
     
-    public InvoiceLineDialog(Generator g) {
+    public InvoiceLineDialog(Generator gen) {
         itemNameLabel = new JLabel("Item Name:");
         itemNameField = new JTextField(20);
         
@@ -37,10 +37,10 @@ public class InvoiceLineDialog extends JDialog{
         itemPriceField =new JTextField(20);
         
         okBtn = new JButton("Ok");
-        okBtn.addActionListener(g);
+        okBtn.addActionListener(gen.getListener());
         okBtn.setActionCommand("createLineOk");
         cancelBtn = new JButton("Cancel");
-        cancelBtn.addActionListener(g);
+        cancelBtn.addActionListener(gen.getListener());
         cancelBtn.setActionCommand("createLineCancel");
         
         setLayout(new GridLayout(4,2));

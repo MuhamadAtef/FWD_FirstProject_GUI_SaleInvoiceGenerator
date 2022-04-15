@@ -13,7 +13,6 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import javax.swing.table.DefaultTableModel;
-import project1_salesinvoices.Controller.InvoiceLine;
 
 public class LineTableModel extends DefaultTableModel {
       private String [] colsNames = {"item Name", "item Price" , "item Count","Items Total"};

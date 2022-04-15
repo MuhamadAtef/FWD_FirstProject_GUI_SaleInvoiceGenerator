@@ -23,16 +23,16 @@ public class InvoiceHeaderDialog extends JDialog{
     private JButton okBtn;
     private JButton cancelBtn;
     
-    public InvoiceHeaderDialog(Generator g) {
+    public InvoiceHeaderDialog(Generator gen) {
         customerNameLabel = new JLabel("customer Name:");
         customerNameField = new JTextField(20);
         dateLabel =new JLabel("Invoice Date:");
         dateField =new JTextField(20);
         okBtn = new JButton("Ok");
-        okBtn.addActionListener(g);
+        okBtn.addActionListener(gen.getListener());
         okBtn.setActionCommand("createInvOk");
         cancelBtn = new JButton("Cancel");
-        cancelBtn.addActionListener(g);
+        cancelBtn.addActionListener(gen.getListener());
         cancelBtn.setActionCommand("createInvCancel");
         setLayout(new GridLayout(3,2));
         add(dateLabel);

@@ -3,12 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Project1_SalesInvoices%20-%20addItem/Project1_SalesInvoices%20-%20final/src/project1_salesinvoices/InvoiceHeaderDialog.java</file>
-            <file>file:/D:/Project1_SalesInvoices%20-%20addItem/Project1_SalesInvoices%20-%20final/src/project1_salesinvoices/InvoiceLine.java</file>
-            <file>file:/D:/Project1_SalesInvoices%20-%20addItem/Project1_SalesInvoices%20-%20final/src/project1_salesinvoices/LineTableModel.java</file>
-            <file>file:/D:/Project1_SalesInvoices%20-%20addItem/Project1_SalesInvoices%20-%20final/src/project1_salesinvoices/Generator.java</file>
-            <file>file:/D:/Project1_SalesInvoices%20-%20addItem/Project1_SalesInvoices%20-%20final/src/project1_salesinvoices/InvoiceHeader.java</file>
-            <file>file:/D:/Project1_SalesInvoices%20-%20addItem/Project1_SalesInvoices%20-%20final/src/project1_salesinvoices/InvoiceLineDialog.java</file>
+            <file>file:/H:/sw/FWD/Java/sales-invoice-generator/Project1_SalesInvoices/Project1_SalesInvoices%20-%20final/src/project1_salesinvoices/View/Generator.java</file>
+            <file>file:/H:/sw/FWD/Java/sales-invoice-generator/Project1_SalesInvoices/Project1_SalesInvoices%20-%20final/src/project1_salesinvoices/Controller/SalesInvoiceListener.java</file>
         </group>
     </open-files>
 </project-private>
